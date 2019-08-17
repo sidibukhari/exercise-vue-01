@@ -1,45 +1,44 @@
 <template>
-  <form class="form-signin text-center">
-    <img class="mb-4" src="@/assets/logo.png" alt="" width="72" height="72" />
-    <h1 class="h3 mb-3 font-weight-normal">Welcome, Guest!</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input
-      type="email"
-      id="inputEmail"
-      class="form-control"
-      placeholder="Email address"
-      required=""
-      autofocus=""
-      v-model="username"
-    />
-    <label for="inputPassword" class="sr-only">Password</label>
-    <div class="input-group">
+  <div class="root col-12 col-md-4 h-100 justify-content-center align-items-center">
+    <form class="form-signin text-center">
+      <img class="mb-4" src="@/assets/logo.png" alt="" width="72" height="72" />
+      <h1 class="h3 mb-3 font-weight-normal">Welcome, Guest!</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
       <input
-        :type="passwordType"
-        id="inputPassword"
+        type="email"
+        id="inputEmail"
         class="form-control"
-        placeholder="Password"
+        placeholder="Email address"
         required=""
-        v-model="password"
+        autofocus=""
+        v-model="username"
       />
-      <div class="input-group-append" v-on:click="show">
-        <span class="input-group-text"
-          ><font-awesome-icon :icon="passwordShowIcon"
-        /></span>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <div class="input-group">
+        <input
+          :type="passwordType"
+          id="inputPassword"
+          class="form-control rounded-0 border-right-0"
+          placeholder="Password"
+          required=""
+          v-model="password"
+        />
+        <div class="input-group-append" v-on:click="show">
+          <span class="input-group-text rounded-0 input-style"
+            ><font-awesome-icon :icon="passwordShowIcon"
+          /></span>
+        </div>
       </div>
-    </div>
-    <div class="checkbox mb-3">
-      <label> <input type="checkbox" value="remember-me" /> Remember me </label>
-    </div>
-    <button
-      class="btn btn-lg btn-primary btn-block"
-      type="submit"
-      v-on:click="submit"
-    >
-      Sign in
-    </button>
-    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
-  </form>
+      <button
+        class="btn btn-lg btn-green btn-block"
+        type="submit"
+        v-on:click="submit"
+      >
+        Sign in
+      </button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -71,30 +70,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-html,
-body {
-  height: 100%;
-}
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
+.root
+  display -ms-flexbox
+  display flex
+  padding-top 40px
+  padding-bottom 40px
+  background-color #f5f5f5
 
 .form-signin {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
   margin: auto;
-}
-
-.form-signin .checkbox {
-  font-weight: 400;
 }
 
 .form-signin .form-control {
@@ -113,19 +100,19 @@ body {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
-.form-signin .input-group
-  margin-bottom 10px
+.btn-green
+  background-color base-green
+  color white
+  border-bottom-right-radius 25px
+  border-bottom-left-radius 25px
+  border-top-right-radius 0
+  border-top-left-radius 0
 
-.form-signin .input-group input[type='password'],
-.form-signin .input-group input[type='text']
-  border-top-left-radius 0 !important
-  border-top-right-radius 0 !important
-  border-bottom-right-radius 0 !important
-
-.form-signin .input-group span
-  border-top-left-radius 0 !important
-  border-top-right-radius 0 !important
-  border-bottom-left-radius 0 !important
+.input-style
+  background-color white
+  border-left 0px
 </style>

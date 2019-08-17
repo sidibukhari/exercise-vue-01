@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="row h-100">
+    <div class="col-md-8 bg-green"></div>
     <LoginForm></LoginForm>
   </div>
 </template>
@@ -14,5 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.bg-green
+  background-color base-green
 </style>

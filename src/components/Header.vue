@@ -46,7 +46,4 @@ export default {}
 </script>
 
 <style>
-body > .container {
-  padding: 60px 0px 0;
-}
 </style>
