@@ -1,5 +1,5 @@
 <template>
-  <div class="root col-12 col-md-4 h-100 justify-content-center align-items-center">
+  <div class="root col-12 col-md-4 col-xl-3 h-100 justify-content-center align-items-center">
     <form class="form-signin text-center">
       <img class="mb-4" src="@/assets/logo.png" alt="" width="72" height="72" />
       <h1 class="h3 mb-3 font-weight-normal">Welcome, Guest!</h1>
@@ -31,7 +31,7 @@
       </div>
       <button
         class="btn btn-lg btn-green btn-block"
-        type="submit"
+        type="button"
         v-on:click="submit"
       >
         Sign in
@@ -53,11 +53,10 @@ export default {
   },
   methods: {
     submit: function () {
-      this.$store.commit('login', {
+      this.$store.dispatch('auth/login', {
         username: this.username,
         password: this.password
       })
-      this.$router.push('/')
     },
     show: function () {
       this.$data.passwordType =

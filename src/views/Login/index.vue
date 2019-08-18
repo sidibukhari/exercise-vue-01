@@ -1,6 +1,6 @@
 <template>
   <div class="row h-100">
-    <div class="col-md-8 bg-green"></div>
+    <div class="col-md-8 col-xl-9 bg-green"></div>
     <LoginForm></LoginForm>
   </div>
 </template>

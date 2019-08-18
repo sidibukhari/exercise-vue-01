@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <div class="text-center">
+    <div class="text-center pad-top-100">
       <img alt="Vue logo" src="@/assets/logo.png" />
       <HelloWorld msg="Welcome to Your Vue.js App" />
     </div>
@@ -21,3 +21,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.pad-top-100
+  padding-top 100px
+</style>

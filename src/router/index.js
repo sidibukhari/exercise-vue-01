@@ -38,12 +38,12 @@ router.beforeEach((to, from, next) => {
       break
     default:
       if (store.state.auth.isLogin === false) {
-        store.commit('setURL', store.state.auth.toURL === '' ? to.path : store.state.auth.toURL)
+        store.dispatch('auth/setURL', store.state.auth.toURL === '' ? to.path : store.state.auth.toURL)
         next('/login')
       } else {
         if (store.state.auth.toURL !== '') {
           const toURL = store.state.auth.toURL
-          store.commit('setURL', '')
+          store.dispatch('auth/setURL', '')
           next(toURL)
         } else {
           next()

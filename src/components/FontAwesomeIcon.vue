@@ -1,10 +1,13 @@
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faEyeSlash, faEye, faHome, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(faBars)
 library.add(faEye)
 library.add(faEyeSlash)
+library.add(faHome)
+library.add(faTimes)
 
 export default FontAwesomeIcon
 </script>
