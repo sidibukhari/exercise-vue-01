@@ -1,18 +1,11 @@
 <template>
-  <div>
-    <header>
-      <nav class="navbar navbar-light navbar-expand-md fixed-top nav-green">
-        <button class="btn btn-white"><font-awesome-icon icon="home" size="2x" /></button>
-        <div class="mr-auto"></div>
-        <button class="btn btn-white" v-on:click=openMenu>
-          <font-awesome-icon icon="bars" size="2x" />
-        </button>
-      </nav>
-    </header>
-    <div>
+  <header>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top nav-green">
+      <button class="btn btn-white"><font-awesome-icon icon="home" size="2x" /></button>
+      <div class="mr-auto"></div>
       <SideMenu ref="sideMenuRef"></SideMenu>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -26,19 +19,11 @@ export default {
   },
   components: {
     SideMenu
-  },
-  methods: {
-    openMenu: function () {
-      this.$refs.sideMenuRef.open()
-    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.btn-white
-  color white
-
 .nav-green
   background-color base-green !important
 </style>

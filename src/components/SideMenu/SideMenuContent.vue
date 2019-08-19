@@ -1,8 +1,7 @@
 <template>
-  <b-modal :id="id" hide-footer hide-header dialog-class="fullscreen">
     <div class="bg-green fullscreen p-4">
       <div class="d-flex justify-content-end mb-3">
-        <button class="btn color-white" v-on:click="close">
+        <button class="btn color-white" data-dismiss="modal">
           <font-awesome-icon icon="times" size="3x" />
         </button>
       </div>
@@ -18,11 +17,9 @@
         </button>
       </div>
     </div>
-  </b-modal>
 </template>
 
 <script>
-import Modal from './Modal'
 export default {
   data: function () {
     return {
@@ -31,10 +28,10 @@ export default {
   },
   methods: {
     open: function () {
-      this.$bvModal.show(this.id)
+
     },
     close: function () {
-      this.$bvModal.hide(this.id)
+
     },
     logout: function () {
       this.close()

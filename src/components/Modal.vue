@@ -1,7 +1,7 @@
 <template>
   <div>
-    <component v-if="modalToggle" v-bind:is="{modalToggle}"></component>
-    <div class="modal" tabindex="-1" role="dialog">
+    <component v-if="modalToggle" v-bind:is="modalToggle" v-bind:modalId="id"></component>
+    <div v-bind:id="id" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <component v-bind:is="modalContent"></component>
@@ -20,6 +20,14 @@ export default {
     modalContent: {
       type: Object
     }
+  },
+  data: function () {
+    return {
+      id: ''
+    }
+  },
+  created: function () {
+    this.id = '' + this._uid
   }
 }
 </script>
