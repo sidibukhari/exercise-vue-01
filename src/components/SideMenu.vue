@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import Modal from './Modal'
 export default {
   data: function () {
     return {
