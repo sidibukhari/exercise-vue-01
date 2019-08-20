@@ -1,29 +1,28 @@
 <template>
-  <Modal>
-    <component v-bind:is="modalToggle"></component>
-    <component v-bind:is="modalContent"></component>
-  </Modal>
+  <div>
+    <Toggler :dataTarget="'#'+dataTarget"></Toggler>
+    <Modal :id=dataTarget></Modal>
+  </div>
 </template>
 
 <script>
-import Modal from '@/components/Modal'
+import Vue from 'vue'
 import Toggler from './SideMenuToggler'
-import Content from './SideMenuContent'
+import Modal from './SideMenuModal'
+
+Vue.component('side-menu-modal', Modal)
+
 export default {
   components: {
-    Modal,
-    Toggler,
-    Content
+    Toggler
   },
   data: function () {
     return {
-      modalToggle: 'Toggler',
-      modalContent: 'Content'
+      dataTarget: '' + Math.floor(Math.random() * (999999999999 - 10000000)) + 100000
     }
+  },
+  mounted: function () {
+    this.$state.dispatch('modal/setModal', 'side-menu-modal')
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>

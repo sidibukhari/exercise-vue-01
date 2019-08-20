@@ -12,11 +12,6 @@
 import SideMenu from './SideMenu'
 
 export default {
-  data: function () {
-    return {
-      dataTarget: ''
-    }
-  },
   components: {
     SideMenu
   }
@@ -24,6 +19,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.btn-white
+  color white
+
 .nav-green
   background-color base-green !important
 </style>

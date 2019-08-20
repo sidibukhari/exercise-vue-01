@@ -1,10 +1,9 @@
-<template>
+<template v-slot:modal>
   <div>
-    <component v-if="modalToggle" v-bind:is="modalToggle" v-bind:modalId="id"></component>
-    <div v-bind:id="id" class="modal" tabindex="-1" role="dialog">
+    <div :id="id" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <component v-bind:is="modalContent"></component>
+          <slot name="content"></slot>
         </div>
       </div>
     </div>
@@ -14,20 +13,9 @@
 <script>
 export default {
   props: {
-    modalToggle: {
-      type: Object
-    },
-    modalContent: {
-      type: Object
+    id: {
+      type: String
     }
-  },
-  data: function () {
-    return {
-      id: ''
-    }
-  },
-  created: function () {
-    this.id = '' + this._uid
   }
 }
 </script>

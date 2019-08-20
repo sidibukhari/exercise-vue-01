@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-white" data-toggle="modal" data-target="#{modalId}">
+  <button class="btn btn-white" data-toggle="modal" :data-target=dataTarget>
     <font-awesome-icon icon="bars" size="2x" />
   </button>
 </template>
@@ -7,13 +7,8 @@
 <script>
 export default {
   props: {
-    modalId: {
+    dataTarget: {
       type: String
-    }
-  },
-  methods: {
-    openMenu: function () {
-      this.$refs.sideMenuRef.open()
     }
   }
 }
