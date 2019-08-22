@@ -1,5 +1,5 @@
-<template v-slot:modal>
-  <div>
+<template>
+  <transition name="modal">
     <div :id="id" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
