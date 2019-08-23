@@ -1,46 +1,48 @@
 <template>
-  <div>
-    <header>
-      <nav class="navbar navbar-light navbar-expand-md fixed-top nav-green">
-        <button class="btn btn-white"><font-awesome-icon icon="home" size="2x" /></button>
-        <slot name="search"></slot>
-        <div class="mr-auto"></div>
-        <Toggler :dataTarget="'#' + dataTarget" v-on:click=clickToggler()></Toggler>
-      </nav>
-    </header>
-    <Modal :id="dataTarget" v-if="showModal === true"></Modal>
-  </div>
+  <nav class="navbar navbar-expand-md fixed-top bg-green white">
+    <slot name="home">
+      <button class="btn white">
+        <font-awesome-icon icon="home" size="2x" />
+      </button>
+    </slot>
+    <slot name="other"></slot>
+    <div class="mr-auto"></div>
+    <slot name="menu">
+      <button class="btn white" data-toggle="modal" :data-target="dataTarget" v-on:click="openMenu()">
+        <font-awesome-icon icon="bars" size="2x" />
+      </button>
+    </slot>
+  </nav>
 </template>
 
 <script>
-import Toggler from '@/components/SideMenu/SideMenuToggler'
-import Modal from '@/components/SideMenu/SideMenuModal'
-
+import Vue from 'vue'
 export default {
-  components: {
-    Toggler,
-    Modal
-  },
   data: function () {
     return {
-      dataTarget: '' + Math.floor(Math.random() * (999999999999 - 10000000)) + 100000,
-      showModal: false
+      dataTarget: '' + Math.floor(Math.random() * (999999999999 - 10000000)) + 100000
     }
   },
   methods: {
-    clickToggler: function () {
-      // eslint-disable-next-line no-console
-      console.log('button is clicjk')
-      this.showModal = true
+    openMenu: function () {
+      // eslint-disable-next-line no-unused-vars
+      let Menu = () => import('@/components/Menu')
+
+      new Vue({
+        render: h => h(Menu)
+      }).$mount('#modal')
     }
   }
 }
 </script>
 
-<style lang="stylus" scoped>
-.btn-white
+<style lang='stylus' scoped>
+.bg-green
+  background-color base-green
+
+.white
   color white
 
-.nav-green
-  background-color base-green !important
+button.white:hover
+  color gray
 </style>

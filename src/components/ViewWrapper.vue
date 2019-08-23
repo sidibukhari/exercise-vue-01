@@ -1,0 +1,13 @@
+<template>
+  <div>
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <div>
+      <slot name="body"></slot>
+    </div>
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
+  </div>
+</template>

@@ -15,5 +15,14 @@
   ],
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": false,
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.css": "none",
+  "vetur.format.defaultFormatter.postcss": "none",
+  "stylusSupremacy.insertBraces": false,
+  "stylusSupremacy.insertColons": false,
+  "prettier.semi": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.quoteProps": "consistent",
+  "prettier.singleQuote": true
 }
