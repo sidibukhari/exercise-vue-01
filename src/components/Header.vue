@@ -5,10 +5,11 @@
         <font-awesome-icon icon="home" size="2x" />
       </button>
     </slot>
-    <slot name="other"></slot>
+    <slot name="otherLeft"></slot>
     <div class="mr-auto"></div>
+    <slot name="otherRight"></slot>
     <slot name="menu">
-      <button class="btn white" data-toggle="modal" :data-target="dataTarget" v-on:click="openMenu()">
+      <button class="btn white" v-on:click="openMenu()">
         <font-awesome-icon icon="bars" size="2x" />
       </button>
     </slot>
@@ -16,21 +17,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import General from '@/utils/General'
 export default {
-  data: function () {
-    return {
-      dataTarget: '' + Math.floor(Math.random() * (999999999999 - 10000000)) + 100000
-    }
-  },
   methods: {
     openMenu: function () {
-      // eslint-disable-next-line no-unused-vars
       let Menu = () => import('@/components/Menu')
-
-      new Vue({
-        render: h => h(Menu)
-      }).$mount('#modal')
+      General.openModal(Menu, this.dataTarget)
     }
   }
 }
