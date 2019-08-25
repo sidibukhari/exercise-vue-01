@@ -3,7 +3,7 @@
     <header>
       <slot name="header"></slot>
     </header>
-    <div>
+    <div class="pad-top-100">
       <slot name="body"></slot>
     </div>
     <footer>
@@ -11,3 +11,8 @@
     </footer>
   </div>
 </template>
+
+<style lang="stylus" scoped>
+.pad-top-100
+  padding-top 100px
+</style>

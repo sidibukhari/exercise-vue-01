@@ -7,20 +7,20 @@
         </button>
       </div>
       <div class="text-center">
-        <button class="btn white btn-block" data-dismiss="modal">
-          <h1 class="p-2" v-on:click="home">Home</h1>
-        </button>
-        <button class="btn white btn-block" data-dismiss="modal">
-          <h1 class="p-2">Pay & Transfer</h1>
-        </button>
-        <button class="btn white btn-block" data-dismiss="modal">
-          <h1 class="p-2">Todo</h1>
-        </button>
-        <button class="btn white btn-block" data-dismiss="modal">
-          <h1 class="p-2" v-on:click="about">About</h1>
-        </button>
-        <button class="btn white btn-block" data-dismiss="modal">
-          <h1 class="p-2" v-on:click="logout">Logout</h1>
+        <router-link tag="button" class="btn white btn-block" to="/" data-dismiss="modal"
+          ><h1 class="p-2">Home</h1>
+        </router-link>
+        <router-link tag="button" class="btn white btn-block" to="/" data-dismiss="modal"
+          ><h1 class="p-2">Pay & Transfer</h1>
+        </router-link>
+        <router-link tag="button" class="btn white btn-block" to="/" data-dismiss="modal"
+          ><h1 class="p-2">Todo</h1>
+        </router-link>
+        <router-link tag="button" class="btn white btn-block" to="/about" data-dismiss="modal"
+          ><h1 class="p-2">About</h1>
+        </router-link>
+        <button class="btn white btn-block" v-on:click="logout" data-dismiss="modal">
+          <h1 class="p-2">Logout</h1>
         </button>
       </div>
     </template>
@@ -35,12 +35,6 @@ export default {
     Modal
   },
   methods: {
-    home: function () {
-      this.$router.push('/')
-    },
-    about: function () {
-      this.$router.push('/about')
-    },
     logout: function () {
       this.$store.dispatch('auth/logout')
     }
